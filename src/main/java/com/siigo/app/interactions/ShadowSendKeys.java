@@ -19,7 +19,7 @@ public class ShadowSendKeys implements Interaction {
         WebElement shadowElement = (WebElement) js.executeScript(jsSelector);
         shadowElement.sendKeys(value);
     }
-    
+
     public static ShadowSendKeys using(String jsSelector, String value) {
         return Tasks.instrumented(ShadowSendKeys.class, jsSelector, value);
     }

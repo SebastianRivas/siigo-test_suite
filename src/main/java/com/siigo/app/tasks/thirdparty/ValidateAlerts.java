@@ -21,7 +21,8 @@ public class ValidateAlerts implements Task {
         Map<String, Map<String, String>> json = null;
 
         try {
-            json = mapper.readValue(jsonAlerts, new TypeReference<Map<String, Map<String, String>>>() {});
+            json = mapper.readValue(jsonAlerts, new TypeReference<Map<String, Map<String, String>>>() {
+            });
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -35,5 +36,5 @@ public class ValidateAlerts implements Task {
     public static ValidateAlerts validate(String jsonAlerts) {
         return Tasks.instrumented(ValidateAlerts.class, jsonAlerts);
     }
-    
+
 }

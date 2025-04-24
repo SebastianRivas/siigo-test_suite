@@ -10,8 +10,7 @@ public class WaitThirdPartyPageLoaded implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            WaitUntil.the(ThirdPartyPage.THIRDPARTY_FORM, isVisible()).forNoMoreThan(30).seconds()
-        );
+                WaitUntil.the(ThirdPartyPage.THIRDPARTY_FORM, isVisible()).forNoMoreThan(30).seconds());
     }
 
     public static WaitThirdPartyPageLoaded loading() {

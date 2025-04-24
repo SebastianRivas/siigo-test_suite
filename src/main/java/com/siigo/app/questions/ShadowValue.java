@@ -18,8 +18,8 @@ public class ShadowValue implements Question<String> {
 
         return shadowElement.getText();
     }
-    
+
     public static ShadowValue from(String jsSelector) {
         return new ShadowValue(jsSelector);
-    } 
+    }
 }

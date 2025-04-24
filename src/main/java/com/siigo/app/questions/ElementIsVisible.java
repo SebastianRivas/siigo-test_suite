@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.*;
 
 public class ElementIsVisible implements Question<Boolean> {
     private final Target target;
-    
+
     public ElementIsVisible(Target target) {
         this.target = target;
     }

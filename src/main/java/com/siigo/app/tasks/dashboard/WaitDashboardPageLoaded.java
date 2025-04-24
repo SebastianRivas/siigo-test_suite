@@ -10,8 +10,7 @@ public class WaitDashboardPageLoaded implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            WaitUntil.the(DashboardPage.DASHBOARD_HEADER, isVisible()).forNoMoreThan(30).seconds()
-        );
+                WaitUntil.the(DashboardPage.DASHBOARD_HEADER, isVisible()).forNoMoreThan(30).seconds());
     }
 
     public static WaitDashboardPageLoaded loading() {

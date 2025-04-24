@@ -10,8 +10,7 @@ public class WaitThirdPartyCreated implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            WaitUntil.the(ThirdPartyPage.ALERT_DIALOG, isVisible()).forNoMoreThan(30).seconds()
-        );
+                WaitUntil.the(ThirdPartyPage.ALERT_DIALOG, isVisible()).forNoMoreThan(30).seconds());
     }
 
     public static WaitThirdPartyCreated loading() {

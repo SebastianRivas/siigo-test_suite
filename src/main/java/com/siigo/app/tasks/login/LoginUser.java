@@ -16,10 +16,9 @@ public class LoginUser implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            ShadowSendKeys.using("return document.querySelector(\"#username\").shadowRoot.querySelector(\"#username-input\");", user.getUsername()),
-            ShadowSendKeys.using("return document.querySelector(\"#current-password\").shadowRoot.querySelector(\"#password-input\");", user.getPassword()),
-            Click.on(LoginPage.BUTTON_INGRESAR)
-        );
+                ShadowSendKeys.using(LoginPage.INPUT_USERNAME, user.getUsername()),
+                ShadowSendKeys.using(LoginPage.INPUT_PASSWORD, user.getPassword()),
+                Click.on(LoginPage.BUTTON_INGRESAR));
     }
 
     public static LoginUser login(User user) {

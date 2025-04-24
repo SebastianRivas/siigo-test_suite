@@ -17,7 +17,7 @@ public class ShadowClick implements Interaction {
         WebElement shadowElement = (WebElement) js.executeScript(jsSelector);
         shadowElement.click();
     }
-    
+
     public static ShadowClick using(String jsSelector) {
         return Tasks.instrumented(ShadowClick.class, jsSelector);
     }

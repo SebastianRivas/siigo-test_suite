@@ -10,8 +10,7 @@ public class WaitLoginPageLoaded implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            WaitUntil.the(LoginPage.FORM_LOGIN, isVisible()).forNoMoreThan(10).seconds()
-        );
+                WaitUntil.the(LoginPage.FORM_LOGIN, isVisible()).forNoMoreThan(10).seconds());
     }
 
     public static WaitLoginPageLoaded loading() {

@@ -18,8 +18,8 @@ public class ShadowIsVisible implements Question<Boolean> {
 
         return shadowElement.isDisplayed();
     }
-    
+
     public static ShadowIsVisible from(String jsSelector) {
         return new ShadowIsVisible(jsSelector);
-    } 
+    }
 }

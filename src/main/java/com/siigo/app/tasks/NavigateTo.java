@@ -8,8 +8,7 @@ public class NavigateTo implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            Open.browserOn().the(LoginPage.class)
-        );
+                Open.browserOn().the(LoginPage.class));
     }
 
     public static NavigateTo loginPage() {

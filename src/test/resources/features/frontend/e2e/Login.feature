@@ -10,18 +10,18 @@ Feature: Login
         Given Tester desea ingresar al login de SIIGO
         When Tester ingresa las credenciales <usr> y <passwd>
         Then Tester verifica que haya ingresado exitosamente
-    
-    Examples:
-        | usr | passwd |
-        | "retoautomationsiigo@yopmail.com" | "T4b4ck0ff1c3P455w0rd658*" |
+
+        Examples:
+            | usr                               | passwd                     |
+            | "retoautomationsiigo@yopmail.com" | "T4b4ck0ff1c3P455w0rd658*" |
 
     Scenario: Login Incorrecto en SIIGO
         Given Tester desea ingresar al login de SIIGO
         When Tester ingresa las credenciales <usr> y <passwd>
         Then Tester verifica que no haya ingresado exitosamente
-    
-    Examples:
-        | usr | passwd |
-        | "retoautomationsiigo@yopmail.com" | "holaMundo123" |
-        | "uncorreodeprueba@yopmail.com" | "T4b4ck0ff1c3P455w0rd658*" |
-        | "uncorreodeprueba@yopmail.com" | "holaMundo123" |
+
+        Examples:
+            | usr                               | passwd                     |
+            | "retoautomationsiigo@yopmail.com" | "holaMundo123"             |
+            | "uncorreodeprueba@yopmail.com"    | "T4b4ck0ff1c3P455w0rd658*" |
+            | "uncorreodeprueba@yopmail.com"    | "holaMundo123"             |

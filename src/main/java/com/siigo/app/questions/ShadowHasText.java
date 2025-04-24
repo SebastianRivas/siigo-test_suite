@@ -20,8 +20,8 @@ public class ShadowHasText implements Question<Boolean> {
 
         return shadowElement.getText().equals(text);
     }
-    
+
     public static ShadowHasText from(String jsSelector, String text) {
         return new ShadowHasText(jsSelector, text);
-    } 
+    }
 }
