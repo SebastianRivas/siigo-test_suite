@@ -14,14 +14,12 @@ public class ThirdPartyStepDefinitions {
     @And("{actor} clikea el boton Crear")
     public void actor_clikea_el_boton_crear(Actor actor) {
         actor.attemptsTo(WaitDashboardPageLoaded.loading());
-        actor.attemptsTo(ShadowClick.using(
-                "return document.querySelector(\"siigo-header-molecule[class='data-siigo-five9 hydrated']\").shadowRoot.querySelector(\"siigo-button-atom[data-id='header-create-button']\").shadowRoot.querySelector(\"button\");"));
+        actor.attemptsTo(ShadowClick.using(DashboardPage.BUTTON_CREAR));
     }
 
     @And("{actor} clikea la opcion Clientes")
     public void actor_clikea_la_opcion_clientes(Actor actor) {
-        actor.attemptsTo(ShadowClick.using(
-                "return document.querySelector(\"siigo-header-molecule[class='data-siigo-five9 hydrated']\").shadowRoot.querySelector(\"siigo-header-create-button-dropdown[data-id='header-create-button-dropdown']\").querySelector(\"div[class='content-create items-4 items-hidden']\").querySelector(\"div[class='content-create-items content-create-items-title-hidden content-create-items-open']\").querySelector(\"div[class='list list-customer-two']\").querySelector(\"li > div > a[data-value='Clientes']\");"));
+        actor.attemptsTo(ShadowClick.using(DashboardPage.BUTON_CLIENTES));
     }
 
     @And("{actor} verifica que haya cargado correctamente el formulario de creacion")
@@ -47,8 +45,7 @@ public class ThirdPartyStepDefinitions {
     public void actor_verifica_que_no_se_haya_creado_correctamente_el_tercero(Actor actor) {
         actor.attemptsTo(WaitThirdPartyCreated.loading());
         actor.should(seeThat(ElementIsVisible.isVisible(ThirdPartyPage.ALERT_DIALOG)));
-        actor.should(seeThat(ElementHasText.hasText(ThirdPartyPage.ALERT_DIALOG,
-                "La identificación del tercero que estas creando ya existe.")));
+        actor.should(seeThat(ElementHasText.hasText(ThirdPartyPage.ALERT_DIALOG, "La identificación del tercero que estas creando ya existe.")));
     }
 
     @Then("{actor} verifica que se presente la alerta de valor invalido {string}")
